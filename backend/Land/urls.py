@@ -1,13 +1,7 @@
-from django.contrib import admin
-from django.urls import path, include
-from django.conf import settings
-from django.conf.urls.static import static
-from Land.views import create_land, get_lands
+from django.urls import path
+from .views import get_lands, create_land
 
 urlpatterns = [
-    path('create/', create_land, name='create_land'),
-    path('list/', get_lands, name='get_lands'),
+    path('lands/', get_lands, name='get_lands'), # This is the endpoint to get all lands
+    path('lands/create/', create_land, name='create_land'), # This is the endpoint to create a new land
 ]
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
