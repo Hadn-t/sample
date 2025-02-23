@@ -13,7 +13,9 @@ def get_lands(request):
     serializer = LandSerializer(lands, many=True)
     return Response(serializer.data, status=status.HTTP_200_OK)
 
+
 @api_view(['POST'])
+@csrf_exempt
 def create_land(request):
     """
     Receive and create a new land entry.
