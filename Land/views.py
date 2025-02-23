@@ -3,6 +3,7 @@ from rest_framework import status
 from rest_framework.decorators import api_view
 from .models import Land
 from .serializers import LandSerializer
+from django.views.decorators.csrf import csrf_exempt
 
 @api_view(['GET'])
 def get_lands(request):
